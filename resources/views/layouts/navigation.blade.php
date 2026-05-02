@@ -2,12 +2,14 @@
             <h1><a><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>〇〇さん</p>
+                    <p>{{Auth::user()->username}}さん</p>
                 </div>
                 <ul>
-                    <li><a href="">ホーム</a></li>
-                    <li><a href="">プロフィール</a></li>
-                    <li><a href="">ログアウト</a></li>
+                    <li><a href="{{route('top')}}">ホーム</a></li>
+                    <li><a href="{{route('profile')}}">プロフィール</a></li>
+                    <li><form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button type="submit">ログアウト</button></form></li>
                 </ul>
             </div>
         </div>

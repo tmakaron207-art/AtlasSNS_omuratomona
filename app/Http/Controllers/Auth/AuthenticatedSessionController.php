@@ -12,6 +12,7 @@ use Illuminate\View\View;
 
 
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -32,6 +33,17 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         return redirect()->intended('top');
+    }
+
+    // ☆ログアウトPOSTで処理するコントロール設定↓
+    public function destroy(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 
 }
