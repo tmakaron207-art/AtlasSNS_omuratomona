@@ -41,5 +41,39 @@ Route::get('follower-list', [PostsController::class, 'index']);
         return view('profiles.profile');
     })->name('profile');
 
+
     // ☆ログアウトのルーティング設定↓
     Route::post('/logout',[AuthenticatedSessionController::class,'destroy'])->name('logout');
+
+
+    // ☆ログイン後のアクセス制限のルーティング処理↓
+    Route::middleware('auth')->group(function(){
+        Route::get('/top',function(){
+            return view('posts.index');
+        })->name('top');
+
+        Route::get('/profile',function(){
+            return view('profiles.profile');
+        })->name('profile');
+
+        Route::get('/search',function(){
+            return view('search');
+        });
+
+        Route::get('/follow-list',function(){
+            return view('follow-list');
+        });
+
+        Route::get('/follower-list',function(){
+            return view('follower-list');
+        });
+
+        Route::get('/user/{id}',function(){
+            return view('user_profile');
+        });
+    });
+
+    // ☆ログインしてない人はログインページへ自動的にいくルート設定↓
+    Route::get('/login',function(){
+        return view('auth.login');
+    })->name('login');

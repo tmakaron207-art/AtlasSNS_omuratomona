@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
         ]);
 
 
-        // ☆登録処理
+        // ☆新規登録処理
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
