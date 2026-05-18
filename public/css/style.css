@@ -112,3 +112,64 @@ header {
 .accordion-list.show {
     display: block;
 }
+
+
+/* サイドバーの表示設定 */
+.side-bar {
+    width: 100%;
+}
+
+/* フォロー数フォロワー数の全体部分 */
+#confirm {
+    padding: 20px;
+    font-weight: bold;
+
+}
+
+/* フォロー数フォロワー数それぞれのブロック */
+.side-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+/* フォロー数フォロワー数それぞれのボタン */
+.btn {
+    width: 100%;
+    text-align: right;
+}
+
+/* フォローフォロワー数のリンク */
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0656cf;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #00297E;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* フォローフォロワー数のリンクのマウスオン時 */
+.btn-link:hover {
+    background: #3b7de0;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ユーザー検索のボタンの位置 */
+.btn-search {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #636b6f;
+}
+
+/* ユーザー検索のリンクのマウスオン時 */
+.btn-search:hover {
+    background: #3b7de0;
+    color: #fff;
+    text-decoration: none;
+}

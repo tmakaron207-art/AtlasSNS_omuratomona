@@ -1,4 +1,4 @@
-
+// ☆☆アコーディオンメニューのアクション設定↓
 
 // accordion-btnを取得
 const btn = document.querySelector('.accordion-btn');
@@ -10,7 +10,7 @@ const menu = document.querySelector('.accordion-list');
 const arrow = document.querySelector('.arrow');
 
 
-// クリック時に、accordion-list,arrowのクラス名の後ろに、show,openを付ける消すを自動設定設定定
+// クリック時に、accordion-list,arrowのクラス名の後ろに、show,openを付ける消すを自動設定
 btn.addEventListener('click', () => {
   menu.classList.toggle('show');
   arrow.classList.toggle('open');

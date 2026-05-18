@@ -57,16 +57,16 @@ Route::get('follower-list', [PostsController::class, 'index']);
         })->name('profile');
 
         Route::get('/search',function(){
-            return view('search');
-        });
+            return view('users.search');
+        })->name('search');
 
         Route::get('/follow-list',function(){
-            return view('follow-list');
-        });
+            return view('follows.followList');
+        })->name('follow-list');
 
         Route::get('/follower-list',function(){
-            return view('follower-list');
-        });
+            return view('follows.followerList');
+        })->name('follower-list');
 
         Route::get('/user/{id}',function(){
             return view('user_profile');
