@@ -19,7 +19,7 @@
         <div class="accordion">
             <div class="accordion-btn">
                 <span class="arrow">
-                    ▼
+
                 </span>
             </div>
                 <ul class="accordion-list">

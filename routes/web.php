@@ -77,3 +77,7 @@ Route::get('follower-list', [PostsController::class, 'index']);
     Route::get('/login',function(){
         return view('auth.login');
     })->name('login');
+
+
+    // ☆投稿フォームのルート設定↓
+    Route::post('top', [PostsController::class, 'index']);

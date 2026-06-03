@@ -13,6 +13,7 @@ header {
 #row {
     display: flex;
     flex-flow: row wrap;
+    margin-right: 0;
 }
 
 #container {
@@ -20,7 +21,7 @@ header {
 }
 
 #side-bar {
-    flex: 0 0 19%;
+    flex: 0 0 20%;
     border-left: 1px solid #727272;
 }
 
@@ -44,12 +45,18 @@ header {
 /* アコーディオンメニュー矢印 */
 .arrow {
     display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
     transition: 0.3s;
+    margin-left: 8px;
 }
 
 /* アコーディオンメニュー矢印が開いたら回転 */
 .arrow.open {
-    transform: rotate(180deg);
+    transform: rotate(225deg);
 }
 
 /* アコーディオンメニューのリスト全体 */
@@ -167,9 +174,55 @@ header {
     border-top: 1px solid #636b6f;
 }
 
-/* ユーザー検索のリンクのマウスオン時 */
-.btn-search:hover {
-    background: #3b7de0;
-    color: #fff;
-    text-decoration: none;
+
+
+
+/* 投稿フォーム全体 */
+.postform {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 150px;
+}
+
+/* ユーザーアイコン */
+.user-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 20px;
+    align-self: flex-start;
+}
+
+/* 投稿ボックス */
+.postbox {
+    height: 100%;
+    flex: 1;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 18px;
+    outline: none;
+}
+
+/* 投稿ボックスの中の初期文字 */
+.postbox::placeholder {
+    color: #DEDEDE;
+}
+
+/* 投稿ボタン */
+.formbtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: 20px;
+    align-self: flex-end;
+}
+
+/* 投稿ボタンの画像 */
+.formbtn img {
+    width: 50px;
 }
