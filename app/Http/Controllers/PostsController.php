@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
+
 class PostsController extends Controller
 {
     //
@@ -12,8 +15,10 @@ class PostsController extends Controller
     }
 
 
+
     // ☆☆投稿フォーム用コントローラ設定↓
-    $request->validate([
+    public function store (Request $request)
+    {$request->validate([
     'post' => 'required|min:1|max:150',
     ],
     ['post.required' => '投稿内容を入力してください',
@@ -21,7 +26,10 @@ class PostsController extends Controller
     'post.max' => '150文字以内で入力してください',]);
 
     // ☆☆投稿保存用
-    post::create(['user_id' => Auth::id(),
+    Post::create(['user_id' => Auth::id(),
     'post' => $request->post,
     ]);
+
+    // return redirect('/top');
+    }
 }

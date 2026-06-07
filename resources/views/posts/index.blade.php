@@ -4,7 +4,17 @@
 
 
 <!-- ☆☆投稿フォーム -->
- <form action="" methood="post" class="postform">
+ <form action="/top" method="post" class="postform">
+
+ <!-- ☆バリデーションエラーメッセージ -->
+@if ($errors -> any())
+<ul>
+    @foreach ($errors -> all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+</ul>
+@endif
+
     @csrf
     <!-- ☆☆ユーザーアイコン -->
      @if(Auth::user()->images)

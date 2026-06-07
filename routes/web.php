@@ -80,4 +80,4 @@ Route::get('follower-list', [PostsController::class, 'index']);
 
 
     // ☆投稿フォームのルート設定↓
-    Route::post('top', [PostsController::class, 'index']);
+    Route::post('top', [PostsController::class, 'store']);
