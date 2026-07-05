@@ -1,3 +1,5 @@
+
+
 // ☆☆アコーディオンメニューのアクション設定↓
 
 // accordion-btnを取得
@@ -14,4 +16,21 @@ const arrow = document.querySelector('.arrow');
 btn.addEventListener('click', () => {
   menu.classList.toggle('show');
   arrow.classList.toggle('open');
+});
+
+
+// 編集ボタンをクリックしたら、編集用のフォームが出るようにする設定
+const editBtns = document.querySelectorAll('.edit-btn');
+
+editBtns.forEach(function (button) {
+  button.addEventListener('click', function () {
+
+
+    console.log("編集ボタンが押された");
+
+    const modal = this.parentElement.nextElementSibling;
+
+    modal.style.display = 'block';
+
+  });
 });

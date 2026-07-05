@@ -1,3 +1,5 @@
+/* ☆ログイン後のスタイル設定 */
+
 @charset "utf-8";
 
 html {}
@@ -23,6 +25,10 @@ header {
 #side-bar {
     flex: 0 0 20%;
     border-left: 1px solid #727272;
+}
+
+.error-messege {
+    color: red;
 }
 
 /* アコーディオンメニュー */
@@ -225,4 +231,83 @@ header {
 /* 投稿ボタンの画像 */
 .formbtn img {
     width: 50px;
+}
+
+/* 投稿内容表示 */
+.post-list {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    padding: 20px 80px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    height: 150px;
+}
+
+/* 投稿内容のユーザー名と内容の全体 */
+.post-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+/* 投稿内容のユーザー名 */
+.username {
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0;
+}
+
+/* 投稿内容のボックス */
+.post-content {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+
+/* 投稿削除用ボタン全体 */
+.delete-form {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+/* 編集用ボタン全体 */
+.edit-form {
+    position: absolute;
+    right: 60px;
+    bottom: 20px;
+}
+
+/* 投稿フォーム編集、削除ボタン */
+.delete-btn,
+.edit-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* 削除用画像、編集用画像 */
+.delete-icon,
+.edit-icon {
+    width: 40px;
+}
+
+.delete-btn:hover .delete-icon {
+    content: url("../images/trash-h.png");
+}
+
+.edit-btn:hover .edit-icon {
+    content: url("../images/edit_h.png");
+}
+
+/* 投稿日時 */
+.post-date {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-family: Arial, sans-serif;
 }

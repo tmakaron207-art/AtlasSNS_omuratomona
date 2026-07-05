@@ -81,3 +81,15 @@ Route::get('follower-list', [PostsController::class, 'index']);
 
     // ☆投稿フォームのルート設定↓
     Route::post('top', [PostsController::class, 'store']);
+
+    // ☆投稿内容を表示させるためのルート設定↓
+    Route::get('top', [PostsController::class, 'index'])
+    ->name('top');
+
+    // ☆投稿削除用のルート↓
+    Route::delete('/post/{id}', [PostsController::class, 'destroy'])
+    ->name('post.destroy');
+
+    // 編集更新処理用のルート↓
+    Route::post('/post/update',[PostsController::class,'update'])
+    ->name('post.update');
