@@ -77,16 +77,21 @@
 </div>
 
 <div class="edit-modal" style="display: none;">
+    <div class="modal-content">
 
-    <form action="{{ route('post.update') }}" method="POST">
+    <form action="{{ route('post.update') }}" method="POST" >
     @csrf
         <input type="hidden" name="id" value="{{ $post->id }}">
         <textarea name="post">{{ $post->post }}</textarea>
-        <button type="submit" class="edit-btn">
+
+        <div class="modal-btn">
+        <button type="submit" >
         <img src="{{ asset('images/edit.png') }}" alt="編集" class="edit-icon">
-    </button>
+        </button>
+    </div>
 
     </form>
+    </div>
 </div>
 
 @endif

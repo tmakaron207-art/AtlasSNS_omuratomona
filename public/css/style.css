@@ -311,3 +311,61 @@ header {
     top: 10px;
     font-family: Arial, sans-serif;
 }
+
+
+/* 編集のモーダル設定モーダル全体 */
+.edit-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.4);
+
+}
+
+/* 編集モーダルの白い部分 */
+.modal-content {
+    background: #fff;
+    width: 900px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* 編集モーダルのテキストボックス */
+.modal-content textarea {
+    width: 100%;
+    height: 250px;
+    resize: none;
+    border: 1px solid #636b6f;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 15px;
+
+}
+
+/* 編集モーダルの編集ボタン 全体*/
+.modal-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* 編集モーダルの編集ボタン */
+.modal-btn button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 編集モーダルの編集ボタンの画像 */
+.modal-btn img {
+    width: 60px;
+}
+
+.modal-btn button:hover .edit-icon {
+    content: url("../images/edit_h.png");
+}
