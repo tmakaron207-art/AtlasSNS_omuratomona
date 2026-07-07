@@ -113,9 +113,10 @@
                 <img src="{{ asset('images/trash.png') }}" alt="削除" class="delete-icon">
             </button>
         </form>
-    </div>
+
 
 @endif
+    </div>
 
 
 @endforeach
