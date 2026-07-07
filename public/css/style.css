@@ -243,7 +243,8 @@ header {
     padding: 20px 80px;
     box-sizing: border-box;
     margin-top: 5px;
-    height: 150px;
+    min-height: 150px;
+    height: auto;
 }
 
 /* 投稿内容のユーザー名と内容の全体 */

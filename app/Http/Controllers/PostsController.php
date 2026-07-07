@@ -71,7 +71,11 @@ class PostsController extends Controller
 
 // ☆☆投稿編集用コントローラ↓
     public function update(Request $request){
-    $request -> validate(['post'=>'required|min:1|max:150',]);
+    $request -> validate(['post'=>'required|min:1|max:150',],
+    ['post.required' => '編集内容を入力してください',
+    'post.min' => '1文字以上で入力してください',
+    'post.max' => '150文字以内で入力してください',]);
+
     $post=Post::find($request->id);
 
     if ($post->user_id!=Auth::id())
