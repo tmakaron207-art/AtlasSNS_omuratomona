@@ -93,3 +93,7 @@ Route::get('follower-list', [PostsController::class, 'index']);
     // 編集更新処理用のルート↓
     Route::post('/post/update',[PostsController::class,'update'])
     ->name('post.update');
+
+    // 検索用のルート
+    Route::get('/search',[UsersController::class,'search'])
+    ->name('users.search');

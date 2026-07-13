@@ -370,3 +370,44 @@ header {
 .modal-btn button:hover .edit-icon {
     content: url("../images/edit_h.png");
 }
+
+
+/* 検索リスト */
+.user-list {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-weight: bold;
+    padding-left: 200px;
+}
+
+/* 検索フォーム全体 */
+.search-form {
+    align-items: center;
+    margin-left: 50px;
+}
+
+/* 検索フォームのボックス */
+.search-form input {
+    width: 250px;
+    /* 横幅を大きく */
+    height: 40px;
+    /* 高さを大きく */
+    font-size: 16px;
+    /* 文字サイズ */
+    padding: 0 10px;
+}
+
+/* 検索ボタン */
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* 検索ボタンの画像 */
+.search-btn img {
+    width: 40px;
+    height: 40px;
+}
