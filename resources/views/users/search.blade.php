@@ -20,13 +20,43 @@
     @foreach($users as $user)
 
     <div class="user-list">
-        @if($user->user && $user->user->images)
+        <!-- ユーザーアイコン -->
+        @if($user->images)
             <img src="{{ asset('images/' . $user->user->images) }}" class="user-icon">
         @else
             <img src="{{ asset('images/icon1.png') }}" class="user-icon">
         @endif
 
+        <!-- ユーザー名 -->
         <p>{{ $user->username }}</p>
+
+<!-- フォローしてるか判定設定↓ -->
+        @if(Auth::user()
+        ->follows()
+        ->where ('follows.id',$user->id)
+        ->exists())
+
+        <!-- フォロー削除ボタン -->
+        <form action="{{ route('user.unfollows', $user->id) }}" method="POST">
+        @csrf
+        @method('delete')
+
+            <button type="submit">
+                フォロー削除
+            </button>
+        </form>
+
+        @else
+
+        <!-- フォローするボタン -->
+        <form action="{{ route('user.follows', $user->id) }}" method="POST">
+        @csrf
+
+            <button type="submit">
+                フォローする
+            </button>
+        </form>
+    @endif
     </div>
 
     @endforeach

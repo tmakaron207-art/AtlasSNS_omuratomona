@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Follow extends Model
 {
     use HasFactory;
+
+    // フォローとフォロー解除のためのモデル
+    protected $fillable = [
+        'following_id',
+        'followed_id',
+    ];
 }

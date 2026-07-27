@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 // ☆ログアウトのための宣言↓
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
+// フォロー用の宣言
+use App\Http\Controllers\FollowsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -97,3 +100,11 @@ Route::get('follower-list', [PostsController::class, 'index']);
     // 検索用のルート
     Route::get('/search',[UsersController::class,'search'])
     ->name('users.search');
+
+    // 検索ページのフォローする用のルート
+    Route::post('/follow/{id}', [FollowsController::class, 'follow'])
+    ->name('user.follows');
+
+    // 検索ページのフォロー削除用のルート
+      Route::delete('/unfollow/{id}', [FollowsController::class, 'unfollow'])
+    ->name('user.unfollows');
