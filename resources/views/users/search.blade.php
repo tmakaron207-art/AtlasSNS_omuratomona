@@ -20,20 +20,23 @@
     @foreach($users as $user)
 
     <div class="user-list">
-        <!-- ユーザーアイコン -->
-        @if($user->images)
-            <img src="{{ asset('images/' . $user->user->images) }}" class="user-icon">
-        @else
-            <img src="{{ asset('images/icon1.png') }}" class="user-icon">
-        @endif
 
-        <!-- ユーザー名 -->
-        <p>{{ $user->username }}</p>
+        <div class="user-info">
+            <!-- ユーザーアイコン -->
+            @if($user->images)
+                <img src="{{ asset('images/' .  $user->user->images) }}" class="user-icon">
+            @else
+            <img src="{{ asset('images/icon1.png') }}"  class="user-icon">
+            @endif
+
+            <!-- ユーザー名 -->
+            <p>{{ $user->username }}</p>
+        </div>
 
 <!-- フォローしてるか判定設定↓ -->
         @if(Auth::user()
         ->follows()
-        ->where ('follows.id',$user->id)
+        ->where ('followed_id',$user->id)
         ->exists())
 
         <!-- フォロー削除ボタン -->
@@ -41,8 +44,8 @@
         @csrf
         @method('delete')
 
-            <button type="submit">
-                フォロー削除
+            <button type="submit" class="unfollows-btn">
+                フォロー解除
             </button>
         </form>
 
@@ -52,7 +55,7 @@
         <form action="{{ route('user.follows', $user->id) }}" method="POST">
         @csrf
 
-            <button type="submit">
+            <button type="submit" class="follows-btn">
                 フォローする
             </button>
         </form>
