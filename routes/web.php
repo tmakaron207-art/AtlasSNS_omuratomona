@@ -108,3 +108,15 @@ Route::get('follower-list', [PostsController::class, 'index']);
     // 検索ページのフォロー削除用のルート
       Route::delete('/unfollow/{id}', [FollowsController::class, 'unfollow'])
     ->name('user.unfollows');
+
+    // フォローユーザーのアイコンを表示させるルート
+    Route::get('/follow-list',[FollowsController::class,'followList']);
+
+    // フォローユーザーの投稿を表示させるルート
+    Route::get('/follow-list', [FollowsController::class, 'index']);
+
+    // フォロワーユーザーのアイコンを表示させるルート
+    Route::get('/follower-list',[FollowsController::class,'followerList']);
+
+     // フォロワーユーザーの投稿を表示させるルート
+    Route::get('/follower-list', [FollowsController::class, 'followerindex']);

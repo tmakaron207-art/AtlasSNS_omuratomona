@@ -12,6 +12,13 @@
 	<img src="{{ asset('images/search.png') }}" alt="検索">
 </button>
 
+<!-- 検索ワード -->
+    @if(!empty($keyword))
+        <span class="search-word">
+            検索ワード：{{ $keyword }}
+        </span>
+    @endif
+
 </form>
 
 

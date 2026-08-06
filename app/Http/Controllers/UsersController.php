@@ -18,7 +18,7 @@ class UsersController extends Controller
         ->where('id', '!=', Auth::id())
         ->get();
 // 検索結果を検索画面に渡す↓
-        return view('users.search',compact('users'));
+        return view('users.search',compact('users','keyword'));
 
         // return view('users.search');
     }
