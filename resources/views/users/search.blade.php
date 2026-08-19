@@ -1,6 +1,6 @@
 <x-login-layout>
 
-<p>検索画面</p>
+
 
 <!-- 検索フォーム入力欄 -->
 <form action="{{ route('users.search') }}" method="GET" class="search-form">

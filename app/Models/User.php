@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Post;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -54,4 +56,10 @@ class User extends Authenticatable
             'following_id'
         );
     }
+
+    // 相手ユーザーの投稿表示のモデル設定
+    public function posts()
+{
+    return $this->hasMany(Post::class);
+}
 }

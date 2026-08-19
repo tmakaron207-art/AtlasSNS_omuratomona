@@ -31,9 +31,43 @@ header {
     color: red;
 }
 
+
+/* ホーム画面ナビゲーション設定 */
+#head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+/* Atlasのロゴ */
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.topusername {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topicon {
+    align-self: flex-end;
+}
+
+
+
 /* アコーディオンメニュー */
 .accordion {
     width: 200px;
+    position: relative;
 }
 
 /* アコーディオンメニュー矢印全体 */
@@ -73,6 +107,12 @@ header {
     padding: 0;
     margin: 0;
     width: 100%;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    background: white;
 }
 
 /* アコーディオンのリストメニュー */
@@ -498,9 +538,50 @@ header {
 }
 
 
-/* フォローリストの投稿全体 */
-.followspost-list {}
 
+/* 相手ユーザーのプロフィール部分全体 */
+.profile {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 130px;
+    padding: 30px 15px 30px 90px;
+    box-sizing: border-box;
+    background: #fff;
+}
 
-/* フォローリストの投稿一覧のアイコン画像 */
-.followspost-list img {}
+/* 相手ユーザーのプロフユーザー情報全体 */
+.profile-info {
+    width: 550px;
+}
+
+/* 相手ユーザーのプロフユーザー名・自己紹介の1行 */
+.profile-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* 相手ユーザーのプロフ最後の .profile-row だけ、下の余白をなくす */
+.profile-row:last-child {
+    margin-bottom: 0;
+}
+
+/* 相手ユーザーのプロフ「ユーザー名」「自己紹介」 */
+.profile-label {
+    width: 120px;
+    margin: 0;
+}
+
+/* 相手ユーザーのプロフ「ユーザー名」「自己紹介」データ */
+.profile-value {
+    margin: 0;
+}
+
+/* 相手ユーザーのプロフフォローボタン位置 */
+.profile-follow {
+    position: absolute;
+    right: 85px;
+    bottom: 20px;
+}

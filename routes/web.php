@@ -73,7 +73,7 @@ Route::get('follower-list', [PostsController::class, 'index']);
 
         Route::get('/user/{id}',function(){
             return view('user_profile');
-        });
+        })->name('user_profile');
     });
 
     // ☆ログインしてない人はログインページへ自動的にいくルート設定↓
@@ -106,7 +106,7 @@ Route::get('follower-list', [PostsController::class, 'index']);
     ->name('user.follows');
 
     // 検索ページのフォロー削除用のルート
-      Route::delete('/unfollow/{id}', [FollowsController::class, 'unfollow'])
+    Route::delete('/unfollow/{id}', [FollowsController::class, 'unfollow'])
     ->name('user.unfollows');
 
     // フォローユーザーのアイコンを表示させるルート
@@ -120,3 +120,6 @@ Route::get('follower-list', [PostsController::class, 'index']);
 
      // フォロワーユーザーの投稿を表示させるルート
     Route::get('/follower-list', [FollowsController::class, 'followerindex']);
+
+    // 相手のユーザープロフィールページとつなげるルート
+    Route::get('/user/{id}',[UsersController::class,'profile']);

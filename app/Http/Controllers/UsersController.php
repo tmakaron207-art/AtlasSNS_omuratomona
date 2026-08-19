@@ -24,5 +24,16 @@ class UsersController extends Controller
     }
 
 
+    // 相手のユーザープロフィールページ
+    public function profile($id){
+        $user=User::findOrFail($id);
+
+        // 投稿を取得する処理
+        $posts = $user->posts()->orderBy('created_at', 'desc')->get();
+
+        return view ('users.userprofile',compact('user','posts'));
+    }
+
+
 
 }
