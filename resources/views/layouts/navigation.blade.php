@@ -37,8 +37,8 @@
         </div>
 
     <div class="topicon">
-        @if(Auth::user()->images)
-            <img src="{{ asset('images/' . Auth::user()->images) }}" alt="ユーザーアイコン" class="user-icon">
+        @if(Auth::user()->icon_image)
+            <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user-icon">
         @else
             <img src="{{ asset('images/icon1.png') }}" class="user-icon">
         @endif

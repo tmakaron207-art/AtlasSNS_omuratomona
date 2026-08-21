@@ -16,6 +16,7 @@ header {
     display: flex;
     flex-flow: row wrap;
     margin-right: 0;
+
 }
 
 #container {
@@ -25,6 +26,7 @@ header {
 #side-bar {
     flex: 0 0 20%;
     border-left: 1px solid #727272;
+    background: #fff;
 }
 
 .error-messege {
@@ -537,8 +539,6 @@ header {
     object-fit: cover;
 }
 
-
-
 /* 相手ユーザーのプロフィール部分全体 */
 .profile {
     position: relative;
@@ -584,4 +584,108 @@ header {
     position: absolute;
     right: 85px;
     bottom: 20px;
+}
+
+
+/* ログインユーザーのプロフィール全体 */
+.profile-edit {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 130px;
+    box-sizing: border-box;
+    background: #fff;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* ログインユーザーのプロフアイコン＋フォーム */
+.form-icon {
+    display: flex;
+}
+
+/* ログインユーザーのプロフフォーム部分 */
+.form-info {
+    width: 550px;
+}
+
+/* ログインユーザーのプロフ1項目 */
+.form-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* ログインユーザーのプロフ項目名 */
+.form-item label {
+    width: 150px;
+    margin: 0;
+}
+
+/*ログインユーザーのプロフ 入力欄 */
+.form-item input[type="text"],
+.form-item input[type="email"],
+.form-item input[type="password"] {
+    width: 280px;
+    height: 38px;
+    box-sizing: border-box;
+    background-color: #f3f3f3;
+    border: 1px solid #aaa;
+}
+
+/*ログインユーザーのプロフ 自己紹介 */
+.form-item textarea {
+    width: 280px;
+    height: 38px;
+    box-sizing: border-box;
+    resize: none;
+    background-color: #f3f3f3;
+    border: 1px solid #aaa;
+}
+
+/*ログインユーザーのプロフ ファイル選択 */
+.form-item input[type="file"] {
+    width: 280px;
+    height: 80px;
+    box-sizing: border-box;
+    color: #aaa;
+    background-color: #f3f3f3;
+    border: 1px solid #aaa;
+}
+
+/*ログインユーザーのプロフ 「ファイルの選択」ボタン */
+.form-item input[type="file"]::file-selector-button {
+    margin-left: 50px;
+    margin-top: 30px;
+    border: none;
+    background-color: transparent;
+    color: #888;
+    cursor: pointer;
+    background: #fff;
+}
+
+/*ログインユーザーのプロフ 更新ボタン */
+.profile-edit button {
+    width: 150px;
+    height: 35px;
+    display: block;
+    margin: 20px auto 0;
+    cursor: pointer;
+
+    background: #DA4A55;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #DA4A55;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+
+/*ログインユーザーのプロフ 更新ボタンのマウスオン時 */
+.profile-edit button:hover {
+    background: #C83D49;
+    color: #fff;
+    text-decoration: none;
 }

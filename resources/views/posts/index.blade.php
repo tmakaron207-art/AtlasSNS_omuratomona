@@ -19,8 +19,8 @@
 
     @csrf
     <!-- ☆☆ユーザーアイコン -->
-    @if(Auth::user()->images)
-    <img src="{{ asset('images/' . Auth::user()->images) }}" alt="ユーザーアイコン" class="user-icon">
+    @if(Auth::user()->icon_image)
+    <img src="{{ asset('images/' . Auth::user()->icon_image) }}" alt="ユーザーアイコン" class="user-icon">
     @else
     <img src="{{ asset('images/icon1.png') }}" class="user-icon">
     @endif
@@ -41,8 +41,8 @@
 @foreach($posts as $post)
     <div class="post-list">
 
-    @if($post->user && $post->user->images)
-        <img src="{{ asset('images/' . $post->user->images) }}" class="user-icon">
+    @if($post->user && $post->user->icon_image)
+        <img src="{{ asset('images/' . $post->user->icon_image) }}" class="user-icon">
     @else
         <img src="{{ asset('images/icon1.png') }}" class="user-icon">
     @endif
@@ -121,6 +121,5 @@
 @endforeach
 
 
-  <h2>機能を実装していきましょう。</h2>
 
 </x-login-layout>

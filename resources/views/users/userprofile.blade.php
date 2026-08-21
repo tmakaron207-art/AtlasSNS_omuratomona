@@ -5,8 +5,8 @@
 
 <div class="profile">
     <!-- プロフィールアイコン -->
-@if($user->images)
-    <img src="{{ asset('images/' . $user->images) }}" alt="アイコン" class="user-icon">
+@if($user->icon_image)
+    <img src="{{ asset('images/' . $user->icon_image) }}" alt="アイコン" class="user-icon">
 @else
     <img src="{{ asset('images/icon1.png') }}" alt="デフォルトアイコン" class="user-icon">
 @endif
@@ -68,8 +68,8 @@
 
         <!-- ユーザーアイコン -->
         <a href="/user/{{ $user->id }}">
-            @if($post->user->images)
-                <img src="{{ asset('images/' . $post->user->images) }}" class="user-icon">
+            @if($post->user->icon_image)
+                <img src="{{ asset('images/' . $post->user->icon_image) }}" class="user-icon">
             @else
                 <img src="{{ asset('images/icon1.png') }}" class="user-icon">
             @endif

@@ -123,3 +123,9 @@ Route::get('follower-list', [PostsController::class, 'index']);
 
     // 相手のユーザープロフィールページとつなげるルート
     Route::get('/user/{id}',[UsersController::class,'profile']);
+
+    // ログインユーザーのプロフィール設定ページとつなげるルート（編集画面用）
+    Route::get('/profile', [UsersController::class, 'edit'])->name('profile');
+
+    // ログインユーザーのプロフィール設定ページとつなげるルート（更新用）
+    Route::post('/profile/update', [UsersController::class, 'update'])->name('profile.update');

@@ -15,8 +15,8 @@
         <!-- フォロワーリストのアイコン画像 -->
         <div class="follower-icon">
             <a href="/user/{{ $user->id }}">
-                @if($user->images)
-                <img src="{{asset('images/'.$user->images)}}" alt="アイコン">
+                @if($user->icon_image)
+                <img src="{{asset('images/'.$user->icon_image)}}" alt="アイコン">
                 @else
                 <img src="{{asset('images/icon1.png')}}" alt="デフォルトアイコン">
                 @endif
@@ -35,9 +35,9 @@
     <div class="post-list">
 
         <!-- ユーザーアイコン -->
-         <a href="/user/{{ $user->id }}">
-            @if($post->user->images)
-                <img src="{{ asset('images/' . $post->user->images) }}" class="user-icon">
+        <a href="/user/{{ $user->id }}">
+            @if($post->user->icon_image)
+                <img src="{{ asset('images/' . $post->user->icon_image) }}" class="user-icon">
             @else
                 <img src="{{ asset('images/icon1.png') }}" class="user-icon">
             @endif
